@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wattle Line Plumbing — Inner West Sydney (concept)</title>
+<!--
+  HOW TO USE IN GOHIGHLEVEL:
+  Copy everything from <link ...fonts...> down to the closing </div> of .wl
+  and paste it into a "Code" element. All styles are scoped under .wl,
+  so they won't break the rest of your page.
+  The quote form here is a demo only (it does not send data).
+  For real leads, replace it with a GoHighLevel Form element.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#E9ECE8}
+</style>
+</head>
+<body>
+
+<div class="wl">
+<style>
+.wl{
+  --ink:#10253F;      /* navy, like a work ute */
+  --ink-2:#2B4260;
+  --hivis:#F5C211;    /* hi-vis / wattle yellow, used only for "call" actions */
+  --water:#2B78B4;
+  --concrete:#E9ECE8; /* cool grey page */
+  --paper:#FFFFFF;
+  --line:#CBD1CC;
+  --muted:#53627A;
+  font-family:"Archivo",system-ui,sans-serif;
+  font-stretch:100%;
+  color:var(--ink);
+  background:var(--concrete);
+  line-height:1.55;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+.wl *,.wl *::before,.wl *::after{box-sizing:border-box}
+.wl a{color:inherit}
+.wl img,.wl svg{display:block}
+.wl .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.wl :focus-visible{outline:3px solid var(--water);outline-offset:3px;border-radius:4px}
+
+/* ---------- buttons ---------- */
+.wl .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font:inherit;font-weight:800;font-stretch:110%;font-size:17px;text-decoration:none;
+  padding:16px 22px;border-radius:10px;border:2px solid transparent;cursor:pointer;line-height:1.1}
+.wl .btn-call{background:var(--hivis);color:var(--ink);border-color:var(--hivis)}
+.wl .btn-call:hover{background:#FFD12E}
+.wl .btn-ghost{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.55)}
+.wl .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.wl .btn svg{width:20px;height:20px;flex:none}
+
+/* ---------- header ---------- */
+.wl .topbar{background:var(--ink);color:#D6DEE9;font-size:14px}
+.wl .topbar .wrap{display:flex;gap:22px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.wl .topbar span{display:inline-flex;align-items:center;gap:6px}
+.wl .topbar svg{width:15px;height:15px;color:var(--hivis)}
+.wl header.nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.12)}
+.wl header.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.wl .logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.wl .logo svg{width:34px;height:34px}
+.wl .logo b{font-weight:900;font-stretch:125%;font-size:19px;letter-spacing:-.01em;line-height:1}
+.wl .logo small{display:block;font-size:12px;color:#AFC0D4;font-weight:500;font-stretch:100%;margin-top:3px}
+.wl .nav-call{font-weight:800;font-stretch:110%;color:var(--hivis);text-decoration:none;font-size:18px;display:flex;align-items:center;gap:8px}
+.wl .nav-call svg{width:20px;height:20px}
+
+/* ---------- hero ---------- */
+.wl .hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.wl .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:660px}
+.wl .hero-copy{align-self:center;padding:64px 56px 72px max(20px,calc((100% - 1120px)/2 + 20px))}
+.wl .hero-media{position:relative;min-height:420px}
+.wl .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.wl .hero-media::before{ /* blends the photo into the navy */
+  content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--ink) 0,rgba(16,37,63,.35) 18%,rgba(16,37,63,0) 40%)}
+.wl .hero-media .job{position:absolute;z-index:2;left:36px;bottom:36px;width:330px}
+.wl .hero h1{font-weight:900;font-stretch:125%;font-size:clamp(34px,4.3vw,58px);line-height:1.02;letter-spacing:-.025em;margin:0 0 18px}
+.wl .hero .lede{font-size:19px;color:#C9D5E3;max-width:34em;margin:0 0 28px}
+.wl .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.wl .proof{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:15px;color:#C9D5E3;margin:0;padding:0;list-style:none}
+.wl .proof li{display:flex;align-items:center;gap:8px}
+.wl .proof svg{width:18px;height:18px;color:var(--hivis)}
+
+/* job card: the one bold moment */
+.wl .job{background:var(--paper);color:var(--ink);border-radius:16px;padding:22px 22px 18px;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.55);transform:rotate(1.2deg)}
+.wl .job-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.wl .job-head b{font-stretch:110%;font-weight:800}
+.wl .status{font-size:13px;font-weight:700;background:#E6F3E9;color:#1F6B37;padding:5px 10px;border-radius:99px;display:inline-flex;gap:6px;align-items:center}
+.wl .status i{width:8px;height:8px;border-radius:50%;background:#2E9B52;display:block}
+.wl .timeline{list-style:none;margin:0;padding:0;position:relative}
+.wl .timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:3px;background:var(--water);border-radius:2px}
+.wl .timeline li{position:relative;padding:0 0 14px 34px;font-size:15px}
+.wl .timeline li::before{content:"";position:absolute;left:2px;top:4px;width:17px;height:17px;border-radius:50%;background:#fff;border:3px solid var(--water)}
+.wl .timeline li.done::before{background:var(--water)}
+.wl .timeline time{display:block;font-weight:800;font-stretch:110%;font-size:14px;color:var(--muted)}
+.wl .job-foot{border-top:1px dashed var(--line);margin-top:4px;padding-top:12px;font-size:14px;color:var(--muted)}
+.wl .job-foot b{color:var(--ink)}
+
+/* ---------- sections ---------- */
+.wl section.block{padding:72px 0}
+.wl h2{font-weight:900;font-stretch:118%;font-size:clamp(28px,3.4vw,40px);line-height:1.08;letter-spacing:-.02em;margin:0 0 12px}
+.wl .sub{color:var(--muted);max-width:40em;margin:0 0 36px}
+
+/* services: ruled two-column list, not cards */
+.wl .services{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}
+.wl .svc{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:22px 24px 22px 0;border-bottom:1px solid var(--line)}
+.wl .svc:nth-child(odd){border-right:1px solid var(--line)}
+.wl .svc:nth-child(even){padding-left:24px}
+.wl .svc svg{width:36px;height:36px;color:var(--water)}
+.wl .svc h3{margin:0 0 4px;font-size:19px;font-weight:800;font-stretch:108%}
+.wl .svc p{margin:0;color:var(--muted);font-size:16px}
+
+/* promises */
+.wl .promises{background:var(--paper)}
+.wl .promises .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.wl .photo{width:100%;height:100%;min-height:440px;object-fit:cover;border-radius:18px}
+.wl .prom-grid{display:grid;grid-template-columns:1fr;gap:30px}
+.wl .prom h3{font-size:22px;font-weight:900;font-stretch:115%;margin:0 0 8px;line-height:1.15}
+.wl .prom p{margin:0;color:var(--muted)}
+.wl .prom .rule{height:6px;width:56px;background:var(--hivis);border-radius:3px;margin-bottom:18px}
+
+/* steps (a real sequence, so numbers are earned) */
+.wl .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s;list-style:none;padding:0;margin:0}
+.wl .steps li{counter-increment:s;padding-top:58px;position:relative}
+.wl .steps li::before{content:counter(s);position:absolute;top:0;left:0;width:44px;height:44px;border-radius:50%;
+  background:var(--ink);color:#fff;font-weight:900;font-stretch:120%;display:grid;place-items:center;font-size:19px}
+.wl .steps h3{margin:0 0 6px;font-size:19px;font-weight:800;font-stretch:108%}
+.wl .steps p{margin:0;color:var(--muted)}
+
+/* renovation feature: photo bleeds to the left edge */
+.wl .reno{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--paper)}
+.wl .reno-media{position:relative;min-height:520px}
+.wl .reno-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wl .reno-copy{align-self:center;padding:72px max(20px,calc((100% - 1120px)/2 + 20px)) 72px 56px}
+.wl .reno-copy ul{margin:0 0 28px;padding:0;list-style:none}
+.wl .reno-copy li{padding:10px 0 10px 30px;border-bottom:1px solid var(--line);position:relative}
+.wl .reno-copy li::before{content:"";position:absolute;left:4px;top:19px;width:12px;height:6px;border-left:3px solid var(--water);border-bottom:3px solid var(--water);transform:rotate(-45deg)}
+.wl .btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.wl .btn-dark:hover{background:var(--ink-2)}
+
+/* reviews */
+.wl .reviews{background:var(--ink);color:#fff}
+.wl .reviews .sub{color:#AFC0D4}
+.wl .rev-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+.wl .rev{background:var(--ink-2);border-radius:14px;padding:26px}
+.wl .rev.big{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between}
+.wl .stars{color:var(--hivis);letter-spacing:2px;font-size:18px;margin-bottom:10px}
+.wl .rev blockquote{margin:0 0 16px;font-size:17px}
+.wl .rev.big blockquote{font-size:23px;line-height:1.35;font-weight:600;font-stretch:104%}
+.wl .rev cite{font-style:normal;color:#AFC0D4;font-size:15px}
+.wl .rev cite b{color:#fff}
+.wl .sample-note{font-size:13px;color:#8EA2BA;margin-top:18px}
+
+/* areas */
+.wl .areas{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.wl .areas li{background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-size:15px;font-weight:600}
+
+/* quote form */
+.wl .quote{background:var(--paper)}
+.wl .quote .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.wl .quote-aside p{color:var(--muted)}
+.wl .quote-aside .big-call{display:block;margin-top:22px;font-weight:900;font-stretch:120%;font-size:30px;text-decoration:none;color:var(--ink)}
+.wl .quote-aside .big-call small{display:block;font-size:14px;font-weight:600;font-stretch:100%;color:var(--muted)}
+.wl form.qf{background:var(--concrete);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wl .qf .full{grid-column:1/-1}
+.wl .qf label{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
+.wl .qf input,.wl .qf select,.wl .qf textarea{width:100%;font:inherit;font-size:16px;padding:13px 14px;border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--ink)}
+.wl .qf input:focus,.wl .qf select:focus,.wl .qf textarea:focus{border-color:var(--water);outline:none;box-shadow:0 0 0 3px rgba(43,120,180,.2)}
+.wl .qf textarea{min-height:96px;resize:vertical}
+.wl .qf .seg{display:flex;gap:8px;flex-wrap:wrap}
+.wl .qf .seg label{margin:0;font-weight:600;cursor:pointer}
+.wl .qf .seg input{position:absolute;opacity:0;width:1px;height:1px}
+.wl .qf .seg span{display:inline-block;padding:10px 14px;border:1.5px solid var(--line);border-radius:9px;background:#fff}
+.wl .qf .seg input:checked + span{border-color:var(--ink);background:var(--ink);color:#fff}
+.wl .qf .seg input:focus-visible + span{outline:3px solid var(--water);outline-offset:2px}
+.wl .qf button{width:100%;background:var(--ink);color:#fff;border-color:var(--ink)}
+.wl .qf button:hover{background:var(--ink-2)}
+.wl .qf .fine{font-size:13px;color:var(--muted);margin:0}
+.wl .qf-done{display:none;grid-column:1/-1;background:#E6F3E9;color:#1F6B37;border-radius:10px;padding:16px;font-weight:600}
+.wl form.qf.sent .qf-done{display:block}
+
+/* faq */
+.wl .faq{max-width:780px}
+.wl details{border-bottom:1px solid var(--line);padding:4px 0}
+.wl summary{cursor:pointer;list-style:none;font-weight:800;font-stretch:106%;font-size:18px;padding:16px 36px 16px 0;position:relative}
+.wl summary::-webkit-details-marker{display:none}
+.wl summary::after{content:"+";position:absolute;right:4px;top:10px;font-size:26px;font-weight:500;color:var(--water)}
+.wl details[open] summary::after{content:"–"}
+.wl details p{margin:0 0 18px;color:var(--muted)}
+
+/* footer */
+.wl footer{background:var(--ink);color:#AFC0D4;font-size:14px;padding:36px 0 110px}
+.wl footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.wl footer b{color:#fff}
+
+/* mobile sticky call bar */
+.wl .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(16,37,63,.97);border-top:1px solid rgba(255,255,255,.12)}
+.wl .sticky .btn{flex:1;padding:14px 10px;font-size:16px}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .wl .quote .wrap,.wl .promises .wrap{grid-template-columns:1fr;gap:36px}
+  .wl .hero-grid,.wl .reno{grid-template-columns:1fr;min-height:0}
+  .wl .hero-copy{padding:40px 20px 36px}
+  .wl .hero-media{min-height:0;padding:0 0 24px}
+  .wl .hero-media img{position:relative;height:300px;display:block;object-position:42% 22%}
+  .wl .hero-media::before{background:linear-gradient(180deg,var(--ink) 0,rgba(16,37,63,0) 22%)}
+  .wl .hero-media .job{position:relative;left:auto;bottom:auto;width:auto;max-width:440px;margin:-44px 16px 0;transform:none}
+  .wl .reno-media{min-height:300px}
+  .wl .reno-copy{padding:44px 20px 52px}
+  .wl .photo{min-height:280px;max-height:340px}
+  .wl .steps{grid-template-columns:1fr;gap:30px}
+  .wl .rev-grid{grid-template-columns:1fr}
+  .wl .rev.big{grid-row:auto}
+}
+@media (max-width:640px){
+  .wl{font-size:16px}
+  .wl .topbar .wrap{gap:6px 16px;font-size:13px}
+  .wl .nav-call span{display:none}
+  .wl .hero-copy{padding:32px 20px 32px}
+  .wl .hero .lede{font-size:17px}
+  .wl .hero .ctas .btn{flex:1 1 100%}
+  .wl section.block{padding:52px 0}
+  .wl .services{grid-template-columns:1fr}
+  .wl .svc,.wl .svc:nth-child(even){padding:18px 0;border-right:0}
+  .wl .svc:nth-child(odd){border-right:0}
+  .wl form.qf{grid-template-columns:1fr;padding:20px}
+  .wl .sticky{display:flex}
+}
+@media (prefers-reduced-motion:reduce){.wl *{transition:none!important;animation:none!important}}
+</style>
+
+  <!-- top trust bar -->
+  <div class="topbar">
+    <div class="wrap">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured, NSW Lic. 000000C</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Open 24/7, including public holidays</span>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="Wattle Line Plumbing home">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#F5C211"/><path d="M9 14h14a6 6 0 016 6v8" stroke="#10253F" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M29 31.5c-1.6 0-2.7-1.1-2.7-2.5 0-1.3 2.7-4.2 2.7-4.2s2.7 2.9 2.7 4.2c0 1.4-1.1 2.5-2.7 2.5z" fill="#2B78B4"/></svg>
+        <span><b>Wattle Line</b><small>Plumbing, Inner West Sydney</small></span>
+      </a>
+      <a class="nav-call" href="tel:+61491570156">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>
+        <span>0491 570 156</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Burst pipe or blocked drain? We're at your door within the hour.</h1>
+        <p class="lede">Licensed plumbers covering Sydney's Inner West, day and night. You get a fixed price before any work starts, so the bill never surprises you.</p>
+        <div class="ctas">
+          <a class="btn btn-call" href="tel:+61491570156">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>
+            Call now: 0491 570 156
+          </a>
+          <a class="btn btn-ghost" href="#quote">Get a free quote</a>
+        </div>
+        <ul class="proof">
+          <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>4.9 from 320 Google reviews</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4 10-10"/></svg>12 years in the Inner West</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4 10-10"/></svg>12-month workmanship guarantee</li>
+        </ul>
+      </div>
+
+      <div class="hero-media">
+        <img src="img/plumber-at-work.webp" alt="Plumber repairing the pipes under a kitchen sink" width="1200" height="800">
+        <div class="job" aria-label="Example of a typical emergency job">
+          <div class="job-head">
+            <b>Burst pipe, Leichhardt</b>
+            <span class="status"><i></i>Fixed</span>
+          </div>
+          <ol class="timeline">
+            <li class="done"><time>9:12 pm</time>Water under the laundry floor</li>
+            <li class="done"><time>9:58 pm</time>Plumber arrives, finds the leak</li>
+            <li class="done"><time>10:05 pm</time>Fixed price agreed before work</li>
+            <li class="done"><time>10:47 pm</time>Pipe replaced, area cleaned up</li>
+          </ol>
+          <div class="job-foot">Average arrival in the Inner West: <b>46 minutes</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- services -->
+  <section class="block" id="services">
+    <div class="wrap">
+      <h2>What we fix</h2>
+      <p class="sub">Most jobs are done in one visit. Our vans carry parts for the common problems, so we rarely have to come back.</p>
+      <div class="services">
+        <div class="svc">
+          <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 14h12v8H4zM20 14h12v8H20"/><path d="M16 18h4"/><path d="M18 24c-1.2 2-2 3.3-2 4.3a2 2 0 004 0c0-1-.8-2.3-2-4.3z" fill="currentColor"/></svg>
+          <div><h3>Burst &amp; leaking pipes</h3><p>Emergency shut-off, leak detection and repair, any time of night.</p></div>
+        </div>
+        <div class="svc">
+          <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="18" cy="18" r="13"/><path d="M11 18h14M18 11v14" opacity=".4"/><circle cx="18" cy="18" r="4"/></svg>
+          <div><h3>Blocked drains &amp; toilets</h3><p>High-pressure jetting and CCTV camera checks to find the cause, not just clear it.</p></div>
+        </div>
+        <div class="svc">
+          <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="10" y="4" width="16" height="26" rx="4"/><path d="M14 33h8M18 30v3"/><path d="M15 20c1-1.5 1.8-2.6 3-4.5 1.2 1.9 2 3 3 4.5a3 3 0 01-6 0z"/></svg>
+          <div><h3>No hot water</h3><p>Same-day repair or replacement for electric, gas and heat pump systems.</p></div>
+        </div>
+        <div class="svc">
+          <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 12h14v4H6zM20 14h6a4 4 0 014 4v3"/><path d="M13 8v4"/><path d="M30 25c-1 1.7-1.6 2.8-1.6 3.6a1.6 1.6 0 003.2 0c0-.8-.6-1.9-1.6-3.6z" fill="currentColor"/></svg>
+          <div><h3>Dripping taps &amp; running toilets</h3><p>Small leaks add up on your water bill. Most are fixed in under an hour.</p></div>
+        </div>
+        <div class="svc">
+          <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 4c4 5 8 9 8 15a8 8 0 01-16 0c0-6 4-10 8-15z"/><path d="M18 30c-2.5 0-4-1.7-4-3.8 0-2.6 4-6.2 4-6.2s4 3.6 4 6.2c0 2.1-1.5 3.8-4 3.8z"/></svg>
+          <div><h3>Gas fitting &amp; leaks</h3><p>Licensed gasfitters for cooktops, heaters and leak checks. Smell gas? Call us now.</p></div>
+        </div>
+        <div class="svc">
+          <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 18h28v4a8 8 0 01-8 8H12a8 8 0 01-8-8z"/><path d="M8 18V8a4 4 0 018 0"/><path d="M10 30l-2 3M26 30l2 3"/></svg>
+          <div><h3>Bathroom &amp; kitchen renovations</h3><p>Rough-in and fit-off plumbing that works with your builder's schedule.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- promises -->
+  <section class="block promises">
+    <div class="wrap">
+      <img class="photo" src="img/van-inner-west.webp" alt="Plumbing van with shelves of parts parked on a tree-lined street" width="1200" height="800">
+      <div>
+      <h2>Three things we promise every customer</h2>
+      <p class="sub">If we don't keep them, tell us and we'll make it right.</p>
+      <div class="prom-grid">
+        <div class="prom"><div class="rule"></div><h3>A fixed price before we start</h3><p>We look at the problem, then give you one price for the whole job. No hourly rates and no extra charges at the end.</p></div>
+        <div class="prom"><div class="rule"></div><h3>On time, or $50 off</h3><p>We give you a two-hour window and text you when we're on the way. If we're late, $50 comes off your bill.</p></div>
+        <div class="prom"><div class="rule"></div><h3>We leave it cleaner than we found it</h3><p>Boot covers on, drop sheets down, and all mess taken away when we finish.</p></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- how it works -->
+  <section class="block">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="sub">From your call to a fixed problem, usually on the same day.</p>
+      <ol class="steps">
+        <li><h3>Call or send a photo</h3><p>Tell us what's wrong. A photo of the problem helps us bring the right parts.</p></li>
+        <li><h3>Get your fixed price</h3><p>A licensed plumber checks the problem on site and gives you one price. You decide whether to go ahead.</p></li>
+        <li><h3>We fix it and clean up</h3><p>Pay when the job is done. Every repair comes with a 12-month workmanship guarantee.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- renovation feature -->
+  <section class="reno">
+    <div class="reno-media">
+      <img src="img/bathroom-reno.webp" alt="Renovated bathroom with black tapware, white tiles and a timber vanity" width="1200" height="800">
+    </div>
+    <div class="reno-copy">
+      <h2>Renovating a bathroom or kitchen?</h2>
+      <p class="sub">We handle the plumbing from rough-in to the last tap, and we turn up on the day your builder needs us.</p>
+      <ul>
+        <li>Rough-in and fit-off for bathrooms, kitchens and laundries</li>
+        <li>Moving or adding taps, showers and toilets</li>
+        <li>Compliance certificate on completion</li>
+      </ul>
+      <a class="btn btn-dark" href="#quote">Get a renovation quote</a>
+    </div>
+  </section>
+
+  <!-- reviews -->
+  <section class="block reviews" id="reviews">
+    <div class="wrap">
+      <h2>What Inner West locals say</h2>
+      <p class="sub">4.9 out of 5 from 320 reviews on Google.</p>
+      <div class="rev-grid">
+        <div class="rev big">
+          <div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Our hot water died on a Sunday night with two kids at home. Dave was here before 8, quoted the new system on the spot and had it running by lunch on Monday. Clear price, no pressure."</blockquote>
+          </div>
+          <cite><b>Priya M.</b>, Marrickville</cite>
+        </div>
+        <div class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"Blocked drain found with a camera, fixed in one visit. They showed me the footage too."</blockquote>
+          <cite><b>Tom R.</b>, Annandale</cite>
+        </div>
+        <div class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"Arrived within the window, put boot covers on and left the bathroom spotless."</blockquote>
+          <cite><b>Helen K.</b>, Petersham</cite>
+        </div>
+      </div>
+      <p class="sample-note">Sample reviews for this concept design. Replace with the client's real Google reviews.</p>
+    </div>
+  </section>
+
+  <!-- service areas -->
+  <section class="block">
+    <div class="wrap">
+      <h2>Suburbs we cover</h2>
+      <p class="sub">Not on the list? Call us anyway. We often travel further for emergencies.</p>
+      <ul class="areas">
+        <li>Leichhardt</li><li>Marrickville</li><li>Newtown</li><li>Annandale</li><li>Balmain</li><li>Rozelle</li>
+        <li>Petersham</li><li>Stanmore</li><li>Dulwich Hill</li><li>Ashfield</li><li>Summer Hill</li><li>Haberfield</li>
+        <li>Glebe</li><li>Lilyfield</li><li>Five Dock</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- quote -->
+  <section class="block quote" id="quote">
+    <div class="wrap">
+      <div class="quote-aside">
+        <h2>Get a free quote</h2>
+        <p>For jobs that can wait a day or two, fill in the form. We'll call you back within 15 minutes during business hours with a price range and a booking time.</p>
+        <p>Water or gas leaking right now? Don't wait for a reply.</p>
+        <a class="big-call" href="tel:+61491570156"><small>Emergencies, 24/7</small>0491 570 156</a>
+      </div>
+
+      <!-- DEMO FORM: does not send data. In GoHighLevel, replace with a Form element. -->
+      <form class="qf" onsubmit="event.preventDefault();this.classList.add('sent');">
+        <div><label for="wl-name">Your name</label><input id="wl-name" autocomplete="name" required></div>
+        <div><label for="wl-phone">Mobile number</label><input id="wl-phone" type="tel" autocomplete="tel" required></div>
+        <div><label for="wl-suburb">Suburb</label><input id="wl-suburb" autocomplete="address-level2" required></div>
+        <div><label for="wl-type">What's the problem?</label>
+          <select id="wl-type" required>
+            <option value="">Choose one</option>
+            <option>Leaking or burst pipe</option>
+            <option>Blocked drain or toilet</option>
+            <option>No hot water</option>
+            <option>Dripping tap or running toilet</option>
+            <option>Gas fitting</option>
+            <option>Renovation plumbing</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="full">
+          <label id="wl-when">When do you need us?</label>
+          <div class="seg" role="radiogroup" aria-labelledby="wl-when">
+            <label><input type="radio" name="when" checked><span>Today</span></label>
+            <label><input type="radio" name="when"><span>This week</span></label>
+            <label><input type="radio" name="when"><span>Just getting prices</span></label>
+          </div>
+        </div>
+        <div class="full"><label for="wl-msg">Tell us a bit more (optional)</label><textarea id="wl-msg" placeholder="e.g. Kitchen sink drains slowly and smells"></textarea></div>
+        <div class="full"><button class="btn" type="submit">Send my quote request</button></div>
+        <p class="fine full">We only use your details to reply about this job.</p>
+        <div class="qf-done" role="status">Quote request sent. We'll call you within 15 minutes during business hours.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- faq -->
+  <section class="block">
+    <div class="wrap">
+      <h2>Common questions</h2>
+      <div class="faq">
+        <details><summary>Do you charge extra at night or on weekends?</summary><p>Yes, there's an after-hours call-out fee, and we tell you the amount on the phone before we come out. The repair itself still gets a fixed price before we start.</p></details>
+        <details><summary>Are your plumbers licensed?</summary><p>Every plumber on our team holds a current NSW plumbing licence, and our gasfitters hold gasfitting licences. We're fully insured for all work.</p></details>
+        <details><summary>How fast can you get here?</summary><p>For emergencies in the Inner West, usually within the hour. For booked jobs, we give you a two-hour window and text you when we're on the way.</p></details>
+        <details><summary>How can I pay?</summary><p>Card, Apple Pay or bank transfer when the job is finished. You don't pay anything upfront.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div><b>Wattle Line Plumbing</b><br>Inner West Sydney, open 24/7<br><a href="tel:+61491570156">0491 570 156</a></div>
+      <div>Concept design for portfolio use.<br>Wattle Line Plumbing is a fictional business.<br>Names, licence, prices and reviews are placeholders.<br>Photos are AI-generated.</div>
+    </div>
+  </footer>
+
+  <!-- sticky bar on phones -->
+  <div class="sticky">
+    <a class="btn btn-call" href="tel:+61491570156">Call now</a>
+    <a class="btn btn-ghost" href="#quote">Free quote</a>
+  </div>
+</div>
+
+</body>
+</html>
